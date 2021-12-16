@@ -1,10 +1,17 @@
 import React from "react";
+import Card from "./Card";
 
 const ListData = () => {
   return (
-    <section className="listdata-section">
+    <section
+      className="listdata-section"
+      style={{ backgroundColor: "#eee", height: "100vh" }}
+    >
       <div className="container">
-          
+        <div className="card-container">
+          <Card />
+         
+        </div>
       </div>
     </section>
   );
