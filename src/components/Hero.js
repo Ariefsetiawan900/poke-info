@@ -10,8 +10,10 @@ const Hero = () => {
             <img className="logo-hero" src={Logo} alt="" />
           </div>
           <div className="input-wrapper-hero">
-            <input type="text" className="input-hero"/>
-            <button type="submit" className="btn">Search</button>
+            <input type="text" className="input-hero" />
+            <button type="submit" className="btn">
+              Search
+            </button>
           </div>
         </div>
       </div>
