@@ -10,7 +10,7 @@ const Hero = () => {
             <img className="logo-hero" src={Logo} alt="" />
           </div>
           <div className="input-wrapper-hero">
-            <input type="text" className="input-hero" />
+            <input type="text" className="input-hero" placeholder="Please Input a Pokemon" />
             <button type="submit" className="btn">
               Search
             </button>

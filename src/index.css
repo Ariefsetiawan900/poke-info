@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+ background-color: #eee;
+}
 
 .container {
   z-index: 1;
@@ -31,6 +34,45 @@
   transition: all 0.3s ease-out;
   background: #fff;
   background: #4b59f7
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* --------color elements--------  */
+.rock {
+  background-color: rgb(148, 81, 81);
+}
+.ghost {
+  background-color: rgb(247, 247, 247);
+}
+.electric {
+  background-color: rgb(255, 255, 161);
+}
+.bug {
+  background-color: #F6D6A7;
+}
+.poison {
+  background-color: #e0a7f6;
+}
+.normal {
+  background-color: #F4F4F4;
+}
+.fairy {
+  background-color: rgba(255, 192, 203, 0.863);
+}
+.fire {
+  background-color: #FBE3DF;
+}
+.grass {
+  background-color:#E2F9E1;
+}
+.water {
+  background-color:#E0F1FD;
 }
 
 
@@ -97,7 +139,7 @@
 }
 
 .card {
-	background-color: #eee;
+	/* background-color: #eee; */
 	border-radius: 20px;
 	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
 	margin: 10px;
