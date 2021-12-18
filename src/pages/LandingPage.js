@@ -22,7 +22,7 @@ const LandingPage = () => {
   const fetchPokemons = async () => {
     try {
       setLoading(true);
-      const data = await Api.getPokemons(25, 25 * page);
+      const data = await Api.getPokemons(20, 20 * page);
       const promises = data.results.map(async (pokemon) => {
         return await Api.getPokemonData(pokemon.url);
       });
@@ -45,9 +45,7 @@ const LandingPage = () => {
     <div>
       <Hero />
       {notFound ? (
-        <div className="loading">
-          <img src={Spinner} alt="Loading..." />
-        </div>
+        <span>Tidak ada Data</span>
       ) : (
         <ListData
           notFound={notFound}
