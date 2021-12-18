@@ -36,11 +36,16 @@ body{
   background: #4b59f7
 }
 
-.loading {
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.text-normal{
+  text-decoration: none;
+  color: black;
 }
 
 /* --------color elements--------  */
@@ -145,6 +150,12 @@ body{
 	margin: 10px;
 	padding: 20px;
 	text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.10);
+  transition: all 0.3s ease-out;
 }
 
 .card .img-container {

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Spinner from "../Assets/loading/Spinner.svg";
 import Api from "../config/Api";
-import Hero from "../components/Hero";
+import Header from "../components/Header";
 import ListData from "../components/ListData";
 
 const LandingPage = () => {
@@ -12,12 +11,6 @@ const LandingPage = () => {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [searching, setSearching] = useState(false);
-
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.PokemonReducer.get_pokemon);
-  const dataPokemon = useSelector(
-    (state) => state.PokemonReducer.get_pokemon_data
-  );
 
   const fetchPokemons = async () => {
     try {
@@ -41,14 +34,33 @@ const LandingPage = () => {
       fetchPokemons();
     }
   }, [page]);
+  const onSearch = async (pokemon) => {
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+    setLoading(true);
+    setNotFound(false);
+    setSearching(true);
+    const result = await Api.searchPokemon(pokemon);
+    if (!result) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    } else {
+      setPokemons([result]);
+      setPage(0);
+      setTotal(1);
+    }
+    setLoading(false);
+    setSearching(false);
+  };
   return (
     <div>
-      <Hero />
+      <Header onSearch={onSearch}/>
       {notFound ? (
-        <span>Tidak ada Data</span>
+        <div className="center">Empty</div>
       ) : (
         <ListData
-          notFound={notFound}
           loading={loading}
           pokemons={pokemons}
           page={page}

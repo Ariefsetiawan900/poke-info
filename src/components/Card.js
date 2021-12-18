@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = ({pokemon}) => {
   const style = `${pokemon.types[0].type.name} card`
-  console.log(pokemon)
+  // console.log(pokemon)
     return (
         <section className={style}>
           <div className="img-container">

@@ -1,10 +1,13 @@
 import React from "react";
 import Card from "./Card";
-import Pagination from './Pagination'
-import Spinner from '../Assets/loading/Spinner.svg'
+import Pagination from "./Pagination";
+import Spinner from "../Assets/loading/Spinner.svg";
+import { useHistory,Link} from 'react-router-dom'
+
 
 const ListData = (props) => {
-  const { notFound, loading, pokemons, page, setPage, total } = props;
+  const { loading, pokemons, page, setPage, total } = props;
+  const history = useHistory()
 
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
@@ -16,27 +19,30 @@ const ListData = (props) => {
     setPage(nextPage);
   };
 
+
   return (
     <section className="listdata-section" style={{ height: "auto" }}>
       <div className="container">
-        {loading ?(
-           <div className="loading">
-           <img src={Spinner} alt="Loading..." />
-         </div>
-        ):(
+        {loading ? (
+          <div className="center">
+            <img src={Spinner} alt="Loading..." />
+          </div>
+        ) : (
           <div className="card-container">
-          {pokemons.map((pokemon, id) => {
-            return <Card pokemon={pokemon} key={id} />;
-          })}
-        </div>
+            {pokemons.map((pokemon, id) => {
+              console.log(pokemon)
+              return <Link className="text-normal" to={`/pokemon/${pokemon.id}`}><Card pokemon={pokemon} key={id} /></Link> 
+            })}
+          </div>
         )}
-       
       </div>
       <div className="pagination-wrapper">
-        <Pagination  page={page + 1}
+        <Pagination
+          page={page + 1}
           totalPages={total}
           onLeftClick={lastPage}
-          onRightClick={nextPage}/>
+          onRightClick={nextPage}
+        />
       </div>
     </section>
   );
