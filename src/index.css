@@ -50,6 +50,10 @@ body {
   color: black;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* --------color elements--------  */
 .rock {
   background-color: rgb(148, 81, 81) !important;
@@ -112,9 +116,7 @@ body {
 
 }
 
-.text-center {
-  text-align: center;
-}
+
 
 
 /* -----List Data section------ */
@@ -123,7 +125,7 @@ body {
   overflow: auto;
 }
 
-/* --------section Detail Pokemon--------- */
+/* -------- Detail Pokemon page--------- */
 .section-detail-pokemon {
   background-image: url(./Assets/img/bg.svg);
   background-position: center;
@@ -138,6 +140,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* ------Not Found Page------- */
+.notfound-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.notfound-section img{
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+.notfound-section h1{
+  margin-bottom: 25px;
 }
 
 

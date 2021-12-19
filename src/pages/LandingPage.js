@@ -58,8 +58,8 @@ const LandingPage = () => {
   return (
     <>
       <Header onSearch={onSearch} />
-      {notFound ? (
-        <div className="center">Empty</div>
+      {notFound  ? (
+        <div className="center">Empty data</div>
       ) : (
         <PokemonList
           loading={loading}
