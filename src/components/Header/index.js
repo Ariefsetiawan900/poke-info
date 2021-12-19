@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../Assets/img/Logo.png";
+import LogoPic1 from "../../Assets/img/Logo.png";
+import { Input, MainLogo } from "../../components";
 
 const Header = (props) => {
   const { onSearch } = props;
@@ -15,24 +16,18 @@ const Header = (props) => {
   const onClick = async (e) => {
     onSearch(search);
   };
+
+  if(props.isCenter){
+    return(
+      <div><MainLogo logoPic={LogoPic1} small /></div>
+    )
+  }
   return (
     <section className="hero-section">
       <div className="container">
         <div className="row-hero">
-          <div className="img-wrapper-hero">
-            <img className="logo-hero" src={Logo} alt="Logo" />
-          </div>
-          <div className="input-wrapper-hero">
-            <input
-              type="text"
-              className="input-hero"
-              placeholder="Please Input a Pokemon"
-              onChange={onChange}
-            />
-            <button type="submit" className="btn" onClick={onClick}>
-              Search
-            </button>
-          </div>
+          <MainLogo logoPic={LogoPic1} />
+          <Input onChange={onChange} onClick={onClick} />
         </div>
       </div>
     </section>

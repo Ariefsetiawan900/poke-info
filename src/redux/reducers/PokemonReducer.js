@@ -3,7 +3,6 @@ import { SEARCH_POKEMON, GET_POKEMON_DATA, GET_POKEMONS } from "../types";
 const initialState ={
   get_pokemon :{},
   get_pokemon_data:[],
-  get_detail:{}
 
 }
 

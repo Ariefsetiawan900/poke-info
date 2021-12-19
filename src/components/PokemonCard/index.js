@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./style.css"
 
-const Card = () => {
+const PokemonCard = () => {
   const pokemons = useSelector(
     (state) => state.PokemonReducer.get_pokemon_data
   );
@@ -27,4 +28,4 @@ const Card = () => {
   return <>{renderList}</>;
 };
 
-export default Card;
+export default PokemonCard;

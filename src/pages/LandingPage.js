@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Api from "../config/Api";
-import Header from "../components/Header";
-import ListData from "../components/ListData";
+import { Header,PokemonList } from '../components'
 import { setPokemons } from '../redux/actions/Pokemon'
 
 const LandingPage = () => {
@@ -66,12 +65,13 @@ const LandingPage = () => {
       {notFound ? (
         <div className="center">Empty</div>
       ) : (
-        <ListData
+        <PokemonList
           loading={loading}
           page={page}
           setPage={setPage}
           total={total}
         />
+        
       )}
     </div>
   );

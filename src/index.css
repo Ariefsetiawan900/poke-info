@@ -4,8 +4,9 @@
   margin: 0;
   padding: 0;
 }
-body{
- background-color: #eee;
+
+body {
+  background-color: #eee;
 }
 
 .container {
@@ -33,7 +34,7 @@ body{
 .btn:hover {
   transition: all 0.3s ease-out;
   background: #fff;
-  background: #4b59f7
+  background: #00459e
 }
 
 .center {
@@ -43,7 +44,7 @@ body{
   text-align: center;
 }
 
-.text-normal{
+.text-normal {
   text-decoration: none;
   color: black;
 }
@@ -52,32 +53,41 @@ body{
 .rock {
   background-color: rgb(148, 81, 81) !important;
 }
+
 .ghost {
   background-color: rgb(247, 247, 247) !important;
 }
+
 .electric {
   background-color: rgb(255, 255, 161) !important;
 }
+
 .bug {
   background-color: #F6D6A7 !important;
 }
+
 .poison {
   background-color: #e0a7f6 !important;
 }
+
 .normal {
   background-color: #F4F4F4 !important;
 }
+
 .fairy {
   background-color: rgba(255, 192, 203, 0.863) !important;
 }
+
 .fire {
   background-color: #FBE3DF !important;
 }
+
 .grass {
-  background-color:#E2F9E1 !important;
+  background-color: #E2F9E1 !important;
 }
+
 .water {
-  background-color:#E0F1FD !important;
+  background-color: #E0F1FD !important;
 }
 
 
@@ -126,248 +136,55 @@ body{
 }
 
 .logo-hero {
-  max-width: 100%;
   vertical-align: middle;
   display: inline-block;
   max-height: 500px;
 }
 
-.text-center{
+.small-logo {
+  max-width: 30%;
+}
+
+.big-logo {
+  max-width: 100%;
+}
+
+.text-center {
   text-align: center;
 }
 
-/* --------List Data Section------  */
-
-.card-container {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: space-between;
-	justify-content: center;
-	margin: 0 auto;
-	max-width: 1200px;
-}
-
-.card {
-	/* background-color: #eee; */
-	border-radius: 20px;
-	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-	margin: 10px;
-	padding: 20px;
-	text-align: center;
-  transition: all 0.3s ease-out;
-}
-
-.card:hover {
-  transform: scale(1.10);
-  transition: all 0.3s ease-out;
-}
-
-.card .img-container {
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 50%;
-	width: 120px;
-	height: 120px;
-	text-align: center;
-}
-
-.card .img-container img {
-	margin-top: 20px;
-	max-width: 90%;
-}
-
-.card .info {
-	margin-top: 20px;
-}
-
-.card .number {
-	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	font-size: 0.8em;
-	padding: 5px 10px;
-}
-
-.card .name {
-	margin: 15px 0 7px;
-	letter-spacing: 1px;
-}
 
 /* -----List Data section------ */
-.listdata-section{
+.listdata-section {
   padding-top: 2em;
 }
 
-/* --------Pagination Section---------  */
-.pagination-wrapper{
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.pagination {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 25px 0;
-  transform: scale(1.2);
- 
-}
-
-
-.icon {
-  width: 28px;
-  height: 28px;
-}
-
-.pagination-btn {
-  background-color: black;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  margin: 0px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-/* ----Detail Page------- */
-.col{
-  min-width: 400px;
-}
-.col span{
-  margin-bottom: 5px;
-}
-.card1{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: 0.25rem;
-}
-
-.card-header1{
-  padding: 0.75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-.card-body1{
-  flex: 1 1 auto;
-  min-height: 1px;
-  padding: 1.25rem;
-}
-
-.img-card-wrapper{
-max-width: 200px;
-} 
-/* .img-card-wrapper img{
-   /* max-width: 100%; */
-  /* vertical-align: middle;
-  display: inline-block;
-  max-height: 500px; */
-/* } */
-
-
-.wrapper{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-/* ---------Modal--------- */
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100vh;
+/* --------section Detail Pokemon--------- */
+.section-detail-pokemon {
   background-image: url(./Assets/img/bg.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.card1 {
-  background-color: white;
-  width: 326px;
-  border-radius: 16px;
-  overflow: hidden;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.card-header1 {
+  height: 100vh;
   width: 100%;
-  /* display: block; */
-  /* background-color: red; */
-  min-height: 6em;
 }
 
-.card-body1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
+/* ---------Detail Page--------- */
+.flex {
+  display: inherit;
+  display: inherit;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+  -ms-flex-align: center;
+  align-items: center;
+
+
 }
 
-.card-body-img1 {
-  border: 5px solid white;
-  border-radius: 50%;
-  margin-top: calc(-48px - 5px);
-  background-color: white;
-}
 
-.card-body-title1 {
-  margin-top: 2rem;
-  font-size: 1.8rem;
-}
-
-.card-body-title1 span {
-  color: black;
-  font-weight: 400;
-}
-
-.card-body-text1 {
-  color: black;
-  font-size: 1.6rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-.card-footer1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.card-footer-social1 {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.card-footer-social1 p {
-  letter-spacing: 1px;
-}
 /* -----responsive---- */
 @media screen and (max-width: 991px) {
   .container {
@@ -392,8 +209,11 @@ max-width: 200px;
   }
 
   .input-hero {
-
     width: 100%;
     margin: 0 0 16px 0;
+  }
+
+  .small-logo {
+    max-width: 40%;
   }
 }

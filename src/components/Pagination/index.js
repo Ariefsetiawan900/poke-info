@@ -1,5 +1,6 @@
 import React from "react";
-import { LeftArrow, RightArrow } from "./Arrows";
+import { Arrows } from '../../components';
+import "./style.css"
 
 const Pagination = (props) => {
   const { onLeftClick, onRightClick, page, totalPages } = props;
@@ -8,7 +9,7 @@ const Pagination = (props) => {
     <div className="pagination">
       <button className="pagination-btn" onClick={onLeftClick}>
         <div className="icon">
-          <LeftArrow />
+          <Arrows align="left" />
         </div>
       </button>
       <div>
@@ -16,7 +17,7 @@ const Pagination = (props) => {
       </div>
       <button className="pagination-btn" onClick={onRightClick}>
         <div className="icon">
-          <RightArrow />
+          <Arrows align="right" />
         </div>
       </button>
     </div>

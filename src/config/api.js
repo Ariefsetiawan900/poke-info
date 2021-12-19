@@ -31,7 +31,7 @@ export default {
   getPokemonData(url) {
     return new Promise((resolve, reject) => {
       try {
-         axios.get(url).then((result) => resolve(result.data));
+        axios.get(url).then((result) => resolve(result.data));
       } catch (error) {
         reject(error);
       }
