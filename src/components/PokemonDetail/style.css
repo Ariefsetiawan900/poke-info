@@ -6,6 +6,7 @@
   overflow: hidden;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-left: 20px;
+  margin-bottom: 45px;
 }
 
 .pokemon-detail-header {
@@ -71,6 +72,6 @@
 
 @media screen and (max-width: 820px) {
   .pokemon-detail {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
