@@ -1,11 +1,9 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Api from "../config/Api";
-import {
-  setPokemonDetail,
-} from "../redux/actions/Pokemon";
-import { PokemonDetail,Header } from "../components";
+import { setPokemonDetail } from "../redux/actions/Pokemon";
+import { PokemonDetail, Header } from "../components";
 
 const DetailPokemon = () => {
   const { id } = useParams();
@@ -15,23 +13,22 @@ const DetailPokemon = () => {
     try {
       let response = await Api.searchPokemon(id);
       dispatch(setPokemonDetail(response));
-
-      console.log(response);
     } catch (error) {
       console.log(error.message);
     }
   };
 
   useEffect(() => {
-    if (id && id !== "") fetchPokemon();
-  }, [id]);
+    fetchPokemon();
+  }, [id,fetchPokemon()]);
 
   return (
     <section className="section-detail-pokemon">
-      <Header isCenter/>
-    <div className="flex">
-      <PokemonDetail />
-    </div>
+      <Header isCenter />
+      <div className="flex">
+        <PokemonDetail />
+        <PokemonDetail progress />
+      </div>
     </section>
   );
 };

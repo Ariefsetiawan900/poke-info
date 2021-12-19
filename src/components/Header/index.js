@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import LogoPic1 from "../../Assets/img/Logo.png";
 import { Input, MainLogo } from "../../components";
+import { Link } from 'react-router-dom'
+
 
 const Header = (props) => {
   const { onSearch } = props;
@@ -19,13 +21,13 @@ const Header = (props) => {
 
   if(props.isCenter){
     return(
-      <div><MainLogo logoPic={LogoPic1} small /></div>
+      <Link to="/"><MainLogo logoPic={LogoPic1} small /></Link>
     )
   }
   return (
-    <section className="hero-section">
+    <section className="header-section">
       <div className="container">
-        <div className="row-hero">
+        <div className="header-row">
           <MainLogo logoPic={LogoPic1} />
           <Input onChange={onChange} onClick={onClick} />
         </div>

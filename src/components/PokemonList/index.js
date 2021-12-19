@@ -2,11 +2,9 @@ import React from "react";
 import PokemonCard from "../PokemonCard";
 import Pagination from "../Pagination";
 import Spinner from "../../Assets/loading/Spinner.svg";
-import { useHistory, Link } from "react-router-dom";
 
 const PokemonList = (props) => {
   const { loading, page, setPage, total } = props;
-  const history = useHistory();
 
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
@@ -19,7 +17,7 @@ const PokemonList = (props) => {
   };
 
   return (
-    <section className="listdata-section" style={{ height: "auto" }}>
+    <section className="pokemonlist-section" style={{ height: "auto" }}>
       <div className="container">
         {loading ? (
           <div className="center">

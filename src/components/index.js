@@ -6,6 +6,7 @@ import PokemonList from "./PokemonList";
 import PokemonDetail from "./PokemonDetail";
 import Input from "./Input";
 import MainLogo from "./MainLogo";
+import Progress from "./Progress";
 
 export {
   Arrows,
@@ -16,4 +17,5 @@ export {
   PokemonDetail,
   Input,
   MainLogo,
+  Progress
 };

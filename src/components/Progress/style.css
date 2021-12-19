@@ -1,0 +1,71 @@
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    width: 300px;
+}
+
+.progress-done {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+}
+
+/* --------color elements--------  */
+.rock {
+    background-color: rgb(148, 81, 81);
+    box-shadow: 0 3px 3px -5px rgb(148, 81, 81), 0 2px 5px rgb(148, 81, 81);
+}
+
+.ghost {
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 3px 3px -5px rgb(247, 247, 247), 0 2px 5px rgb(247, 247, 247);
+}
+
+.electric {
+    background-color: rgb(255, 255, 161);
+    box-shadow: 0 3px 3px -5px rgb(255, 255, 161), 0 2px 5px rgb(255, 255, 161);
+}
+
+.bug {
+    background-color: #F6D6A7;
+    box-shadow: 0 3px 3px -5px #F6D6A7, 0 2px 5px #F6D6A7;
+}
+
+.poison {
+    background-color: #e0a7f6;
+    box-shadow: 0 3px 3px -5px #e0a7f6, 0 2px 5px #e0a7f6;
+}
+
+.normal {
+    background-color: #F4F4F4;
+    box-shadow: 0 3px 3px -5px #F4F4F4, 0 2px 5px #F4F4F4;
+}
+
+.fairy {
+    background-color: rgba(255, 192, 203, 0.863);
+    box-shadow: 0 3px 3px -5px rgba(255, 192, 203, 0.863), 0 2px 5px rgba(255, 192, 203, 0.863);
+}
+
+.fire {
+    background-color: #FBE3DF;
+    box-shadow: 0 3px 3px -5px #FBE3DF, 0 2px 5px #FBE3DF;
+    font-weight: bold;
+}
+
+.grass {
+    background-color: #E2F9E1;
+    box-shadow: 0 3px 3px -5px #E2F9E1, 0 2px 5px #E2F9E1;
+}
+
+.water {
+    background-color: #E0F1FD;
+    box-shadow: 0 3px 3px -5px #E0F1FD, 0 2px 5px #E0F1FD;
+}
