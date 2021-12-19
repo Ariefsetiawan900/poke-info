@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../Assets/img/Logo.png";
 
-const Hero = (props) => {
+const Header = (props) => {
   const { onSearch } = props;
   const [search, setSearch] = useState("");
 
@@ -39,4 +39,4 @@ const Hero = (props) => {
   );
 };
 
-export default Hero;
+export default Header;

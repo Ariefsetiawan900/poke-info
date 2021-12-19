@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import Api from "../config/Api";
 import Header from "../components/Header";
 import ListData from "../components/ListData";
+import { setPokemons } from '../redux/actions/Pokemon'
 
 const LandingPage = () => {
-  const [pokemons, setPokemons] = useState([]);
+  // const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [searching, setSearching] = useState(false);
+
+  const dispatch = useDispatch()
+  // const pokemons = useSelector((state)=>state.PokemonReducer.get_pokemon_data)
 
   const fetchPokemons = async () => {
     try {
@@ -20,7 +24,8 @@ const LandingPage = () => {
         return await Api.getPokemonData(pokemon.url);
       });
       const results = await Promise.all(promises);
-      setPokemons(results);
+      dispatch(setPokemons(results))
+      // setPokemons(results);
       setLoading(false);
       setTotal(Math.ceil(data.count / 25));
       setNotFound(false);
@@ -47,7 +52,8 @@ const LandingPage = () => {
       setLoading(false);
       return;
     } else {
-      setPokemons([result]);
+      // setPokemons([result]);
+      dispatch(setPokemons([result]))
       setPage(0);
       setTotal(1);
     }
@@ -62,7 +68,6 @@ const LandingPage = () => {
       ) : (
         <ListData
           loading={loading}
-          pokemons={pokemons}
           page={page}
           setPage={setPage}
           total={total}

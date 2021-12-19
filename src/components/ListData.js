@@ -2,12 +2,11 @@ import React from "react";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import Spinner from "../Assets/loading/Spinner.svg";
-import { useHistory,Link} from 'react-router-dom'
-
+import { useHistory, Link } from "react-router-dom";
 
 const ListData = (props) => {
-  const { loading, pokemons, page, setPage, total } = props;
-  const history = useHistory()
+  const { loading, page, setPage, total } = props;
+  const history = useHistory();
 
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
@@ -19,7 +18,6 @@ const ListData = (props) => {
     setPage(nextPage);
   };
 
-
   return (
     <section className="listdata-section" style={{ height: "auto" }}>
       <div className="container">
@@ -29,10 +27,7 @@ const ListData = (props) => {
           </div>
         ) : (
           <div className="card-container">
-            {pokemons.map((pokemon, id) => {
-              console.log(pokemon)
-              return <Link className="text-normal" to={`/pokemon/${pokemon.id}`}><Card pokemon={pokemon} key={id} /></Link> 
-            })}
+            <Card />
           </div>
         )}
       </div>

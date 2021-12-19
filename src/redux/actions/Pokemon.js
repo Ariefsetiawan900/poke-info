@@ -1,12 +1,12 @@
 import { GET_POKEMONS, GET_POKEMON_DATA, SEARCH_POKEMON } from "../types";
 
-export const arrGetPokemons = (params) => {
+export const GetPokemons = (params) => {
   return {
     type: GET_POKEMONS,
     payload: params,
   }
 }
-export const arrGetPokemonData = (params) => {
+export const setPokemons = (params) => {
   return {
     type: GET_POKEMON_DATA,
     payload: params,
