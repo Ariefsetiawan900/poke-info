@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import LogoPic1 from "../../Assets/img/Logo.png";
-import { Input, MainLogo } from "../../components";
-import { Link } from 'react-router-dom'
-
+import { Input, MainLogo, Arrows } from "../../components";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const { onSearch } = props;
@@ -19,10 +18,12 @@ const Header = (props) => {
     onSearch(search);
   };
 
-  if(props.isCenter){
-    return(
-      <Link to="/"><MainLogo logoPic={LogoPic1} small /></Link>
-    )
+  if (props.isCenter) {
+    return (
+      <Link to="/">
+        <MainLogo logoPic={LogoPic1} small />
+      </Link>
+    );
   }
   return (
     <section className="header-section">

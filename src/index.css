@@ -38,6 +38,25 @@ body {
   background: #00459e
 }
 
+.wrapper-btn-black{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.btn-back{
+  border-radius: 60%;
+  background: #0467fb;
+  white-space: nowrap;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -143,18 +162,20 @@ body {
 }
 
 /* ------Not Found Page------- */
-.notfound-section{
+.notfound-section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
 }
-.notfound-section img{
+
+.notfound-section img {
   max-width: 500px;
   margin-bottom: 25px;
 }
-.notfound-section h1{
+
+.notfound-section h1 {
   margin-bottom: 25px;
 }
 
