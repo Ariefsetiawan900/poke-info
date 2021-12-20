@@ -34,7 +34,7 @@ const DetailPokemon = () => {
   const fetchPokemon = async () => {
     try {
       handleGlobalState("loading_detailPage", true);
-      let response = await Api.searchPokemon(id);
+      let response = await Api.action.searchPokemon(id);
       dispatch(setPokemonDetail(response));
       handleGlobalState("loading_detailPage", false);
       document.title = response.name;
