@@ -1,0 +1,5 @@
+/* -----Pokemon List------ */
+.pokemonlist-section {
+    padding-top: 2em;
+    overflow: auto;
+}

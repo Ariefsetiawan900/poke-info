@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Api from "../config/Api";
-import { setPokemonDetail } from "../redux/actions/Pokemon";
-import { PokemonDetail, Header,Arrows } from "../components";
+import Api from "../../config/Api";
+import { setPokemonDetail } from "../../redux/actions/Pokemon";
+import { PokemonDetail, Header,Arrows } from "../../components";
 import { Link } from 'react-router-dom'
-import Spinner from '../Assets/loading/Spinner.svg'
+import Spinner from '../../Assets/loading/Spinner.svg'
+
+import "./style.css"
 
 const DetailPokemon = () => {
   const { id } = useParams();

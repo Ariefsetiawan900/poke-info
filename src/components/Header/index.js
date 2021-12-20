@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import LogoPic1 from "../../Assets/img/Logo.png";
-import { Input, MainLogo, Arrows } from "../../components";
+import { Input, MainLogo } from "../../components";
 import { Link } from "react-router-dom";
+
+import "./style.css";
 
 const Header = (props) => {
   const { onSearch } = props;

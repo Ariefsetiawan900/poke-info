@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Spinner from "../../Assets/loading/Spinner.svg";
 import { handleGlobal } from "../../redux/actions/Pokemon";
 
+import "./style.css"
+
 const PokemonList = () => {
   const loading = useSelector(
     (state) => state.PokemonReducer.global.loading_landingPage

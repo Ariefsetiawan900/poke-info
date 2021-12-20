@@ -1,0 +1,17 @@
+/* ------Not Found Page------- */
+.notfound-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .notfound-section img {
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+  
+  .notfound-section h1 {
+    margin-bottom: 25px;
+  }

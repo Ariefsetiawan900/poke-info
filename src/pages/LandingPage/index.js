@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Api from "../config/Api";
-import { Header, PokemonList } from "../components";
-import { setPokemons, handleGlobal } from "../redux/actions/Pokemon";
+import Api from "../../config/Api";
+import { Header, PokemonList } from "../../components";
+import { setPokemons, handleGlobal } from "../../redux/actions/Pokemon";
 
 const LandingPage = () => {
   const notFound = useSelector((state) => state.PokemonReducer.global.notFound);
