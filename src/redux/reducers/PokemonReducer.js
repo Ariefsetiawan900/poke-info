@@ -3,6 +3,7 @@ import {
   GET_POKEMON_DATA,
   GET_POKEMONS,
   HANDLE_GLOBAL_STATE,
+  EMPTY_STATE,
 } from "../types";
 
 const initialState = {
@@ -33,6 +34,11 @@ export default (pokemon = initialState, action) => {
           ...pokemon.global,
           [action.payload.params.name]: action.payload.params.val,
         },
+      };
+    case EMPTY_STATE:
+      return {
+        ...pokemon,
+        get_pokemon: {},
       };
     default:
       return pokemon;
