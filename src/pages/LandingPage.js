@@ -1,30 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Api from "../config/Api";
 import { Header, PokemonList } from "../components";
-import { setPokemons } from "../redux/actions/Pokemon";
+import { setPokemons, handleGlobal } from "../redux/actions/Pokemon";
 
 const LandingPage = () => {
-  const [page, setPage] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
-  const [searching, setSearching] = useState(false);
+  const notFound = useSelector((state) => state.PokemonReducer.global.notFound);
+  const page = useSelector((state) => state.PokemonReducer.global.page);
+  const searching = useSelector(
+    (state) => state.PokemonReducer.global.searching
+  );
 
   const dispatch = useDispatch();
+  const handleGlobalState = (name, val) => {
+    dispatch(
+      handleGlobal({
+        params: {
+          name,
+          val,
+        },
+      })
+    );
+  };
 
   const fetchPokemons = async () => {
     try {
-      setLoading(true);
+      handleGlobalState("loading_landingPage", true);
       const data = await Api.getPokemons(20, 20 * page);
       const promises = data.results.map(async (pokemon) => {
         return await Api.getPokemonData(pokemon.url);
       });
       const results = await Promise.all(promises);
       dispatch(setPokemons(results));
-      setLoading(false);
-      setTotal(Math.ceil(data.count / 25));
-      setNotFound(false);
+      handleGlobalState("loading_landingPage", false);
+      handleGlobalState("total", Math.ceil(data.count / 25));
+      handleGlobalState("notFound", false);
     } catch (error) {
       console.log(error.message);
     }
@@ -39,35 +49,28 @@ const LandingPage = () => {
     if (!pokemon) {
       return fetchPokemons();
     }
-    setLoading(true);
-    setNotFound(false);
-    setSearching(true);
+    handleGlobalState("loading_landingPage", true);
+    handleGlobalState("notFound", false);
+    handleGlobalState("searching", true);
+    // setSearching(true);
     const result = await Api.searchPokemon(pokemon);
     if (!result) {
-      setNotFound(true);
-      setLoading(false);
+      handleGlobalState("notFound", true);
+      handleGlobalState("loading_landingPage", false);
       return;
     } else {
       dispatch(setPokemons([result]));
-      setPage(0);
-      setTotal(1);
+      handleGlobalState("page", 0);
+      handleGlobalState("total", 1);
     }
-    setLoading(false);
-    setSearching(false);
+    handleGlobalState("loading_landingPage", false);
+    handleGlobalState("searching", false);
+    // setSearching(false);
   };
   return (
     <>
       <Header onSearch={onSearch} />
-      {notFound  ? (
-        <div className="center">Empty data</div>
-      ) : (
-        <PokemonList
-          loading={loading}
-          page={page}
-          setPage={setPage}
-          total={total}
-        />
-      )}
+      {notFound ? <div className="center">Empty data</div> : <PokemonList />}
     </>
   );
 };
