@@ -1,52 +1,33 @@
-import axios from "axios";
-
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 
-export default {
-  action: {
-    searchPokemon(pokemon) {
-      return new Promise((resolve, reject) => {
-        try {
-          axios
-            .get(`${BASE_URL}/${pokemon}`)
-            .then((result) => {
-              return result.data;
-            })
-            .then((data) => resolve(data));
-        } catch (error) {
-          reject(error);
-        }
-      });
-    },
-    // get pokemons
-    getPokemons(limit = 25, offset = 0) {
-      return new Promise((resolve, reject) => {
-        try {
-          axios
-            .get(`${BASE_URL}?limit=${limit}&offset=${offset}`)
-            .then((result) => {
-              return result.data;
-            })
-            .then((data) => resolve(data));
-        } catch (error) {
-          reject(error);
-        }
-      });
-    },
-    // get pokemon data
-    getPokemonData(url) {
-      return new Promise((resolve, reject) => {
-        try {
-          axios
-            .get(url)
-            .then((result) => {
-              return result.data;
-            })
-            .then((data) => resolve(data));
-        } catch (error) {
-          reject(error);
-        }
-      });
-    },
-  },
+export const searchPokemon = async (pokemon) => {
+  try {
+    let url = `${BASE_URL}/${pokemon}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getPokemons = async (limit = 25, offset = 0) => {
+  try {
+    let url = `${BASE_URL}?limit=${limit}&offset=${offset}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getPokemonData = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
 };

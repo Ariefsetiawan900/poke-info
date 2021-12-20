@@ -28,7 +28,6 @@ PokeInfo an application for find & searching data pokemon
 
 - Dependencies
 
- 		"axios": "^0.24.0",
  		"react-redux": "^7.2.6",
  		"react-router-dom": "^5.2.0",
  		"redux": "^4.1.2",

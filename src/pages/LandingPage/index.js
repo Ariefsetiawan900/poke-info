@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Api from "../../config/Api";
+import { getPokemonData, getPokemons, searchPokemon } from "../../config/Api";
 import { Header, PokemonList } from "../../components";
 import { setPokemons, handleGlobal } from "../../redux/actions/Pokemon";
 
@@ -26,9 +26,9 @@ const LandingPage = () => {
   const fetchPokemons = async () => {
     try {
       handleGlobalState("loading_landingPage", true);
-      const data = await Api.action.getPokemons(20, 20 * page);
+      const data = await getPokemons(20, 20 * page);
       const promises = data.results.map(async (pokemon) => {
-        return await Api.action.getPokemonData(pokemon.url);
+        return await getPokemonData(pokemon.url);
       });
       const results = await Promise.all(promises);
       dispatch(setPokemons(results));
@@ -52,7 +52,7 @@ const LandingPage = () => {
     handleGlobalState("loading_landingPage", true);
     handleGlobalState("notFound", false);
     handleGlobalState("searching", true);
-    const result = await Api.action.searchPokemon(pokemon);
+    const result = await searchPokemon(pokemon);
     if (!result) {
       handleGlobalState("notFound", true);
       handleGlobalState("loading_landingPage", false);

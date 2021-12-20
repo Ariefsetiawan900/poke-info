@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Api from "../../config/Api";
+import { searchPokemon } from '../../config/Api'
 import {
   setPokemonDetail,
   emptyState,
@@ -34,7 +34,7 @@ const DetailPokemon = () => {
   const fetchPokemon = async () => {
     try {
       handleGlobalState("loading_detailPage", true);
-      let response = await Api.action.searchPokemon(id);
+      let response = await searchPokemon(id);
       dispatch(setPokemonDetail(response));
       handleGlobalState("loading_detailPage", false);
       document.title = response.name;
