@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonData, getPokemons, searchPokemon } from "../../config/Api";
+import { getPokemonData, getPokemons, searchPokemon } from "../../service/Api";
 import { Header, PokemonList } from "../../components";
 import { setPokemons, handleGlobal } from "../../redux/actions/Pokemon";
 

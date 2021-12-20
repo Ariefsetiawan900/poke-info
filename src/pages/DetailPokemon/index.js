@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { searchPokemon } from '../../config/Api'
+import { searchPokemon } from '../../service/Api'
 import {
   setPokemonDetail,
   emptyState,
