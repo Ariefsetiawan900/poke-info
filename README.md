@@ -26,7 +26,13 @@ PokeInfo an application for find & searching data pokemon
 1. Install [Github](https://git-scm.com/downloads "Github")
 2. Instal [Node Js](https://nodejs.org/en/ "Node Js")
 
+- Dependencies
 
+ 		"axios": "^0.24.0",
+ 		"react-redux": "^7.2.6",
+ 		"react-router-dom": "^5.2.0",
+ 		"redux": "^4.1.2",
+ 		"redux-thunk": "^2.4.1",
 
 ## C. How To Install
 1. Open app's directory in CMD/CLI or Terminal.

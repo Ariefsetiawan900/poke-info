@@ -52,7 +52,6 @@ const LandingPage = () => {
     handleGlobalState("loading_landingPage", true);
     handleGlobalState("notFound", false);
     handleGlobalState("searching", true);
-    // setSearching(true);
     const result = await Api.searchPokemon(pokemon);
     if (!result) {
       handleGlobalState("notFound", true);
@@ -65,7 +64,6 @@ const LandingPage = () => {
     }
     handleGlobalState("loading_landingPage", false);
     handleGlobalState("searching", false);
-    // setSearching(false);
   };
   return (
     <>

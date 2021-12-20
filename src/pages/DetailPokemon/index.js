@@ -1,25 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Api from "../../config/Api";
-import { setPokemonDetail,emptyState } from "../../redux/actions/Pokemon";
-import { PokemonDetail, Header,Arrows } from "../../components";
-import { Link } from 'react-router-dom'
-import Spinner from '../../Assets/loading/Spinner.svg'
+import {
+  setPokemonDetail,
+  emptyState,
+  handleGlobal,
+} from "../../redux/actions/Pokemon";
+import { PokemonDetail, Header, Arrows } from "../../components";
+import { Link } from "react-router-dom";
+import Spinner from "../../Assets/loading/Spinner.svg";
 
-import "./style.css"
+import "./style.css";
 
 const DetailPokemon = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
+  const loading = useSelector(
+    (state) => state.PokemonReducer.global.loading_detailPage
+  );
+
   const dispatch = useDispatch();
+  const handleGlobalState = (name, val) => {
+    dispatch(
+      handleGlobal({
+        params: {
+          name,
+          val,
+        },
+      })
+    );
+  };
 
   const fetchPokemon = async () => {
     try {
-      setLoading(true)
+      handleGlobalState("loading_detailPage", true);
       let response = await Api.searchPokemon(id);
       dispatch(setPokemonDetail(response));
-      setLoading(false)
+      handleGlobalState("loading_detailPage", false);
       document.title = response.name;
     } catch (error) {
       console.log(error.message);
@@ -28,16 +45,18 @@ const DetailPokemon = () => {
 
   useEffect(() => {
     fetchPokemon();
-    return ()=>{
-      dispatch(emptyState())
-    }
+    return () => {
+      dispatch(emptyState());
+    };
   }, [id]);
 
   return (
     <section className="section-detail-pokemon">
       <Header isCenter />
       <Link to="/" className="wrapper-btn-black">
-      <button className="btn-back"><Arrows align="left"/></button>
+        <button className="btn-back">
+          <Arrows align="left" />
+        </button>
       </Link>
       <div className="flex">
         {loading ? (
