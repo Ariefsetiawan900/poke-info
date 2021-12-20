@@ -9,7 +9,10 @@ export default {
         try {
           axios
             .get(`${BASE_URL}/${pokemon}`)
-            .then((result) => resolve(result.data));
+            .then((result) => {
+              return result.data;
+            })
+            .then((data) => resolve(data));
         } catch (error) {
           reject(error);
         }
@@ -21,7 +24,10 @@ export default {
         try {
           axios
             .get(`${BASE_URL}?limit=${limit}&offset=${offset}`)
-            .then((result) => resolve(result.data));
+            .then((result) => {
+              return result.data;
+            })
+            .then((data) => resolve(data));
         } catch (error) {
           reject(error);
         }
@@ -31,7 +37,12 @@ export default {
     getPokemonData(url) {
       return new Promise((resolve, reject) => {
         try {
-          axios.get(url).then((result) => resolve(result.data));
+          axios
+            .get(url)
+            .then((result) => {
+              return result.data;
+            })
+            .then((data) => resolve(data));
         } catch (error) {
           reject(error);
         }
